@@ -96,7 +96,7 @@ button{
 }
 
 button:hover{
-    background: #f8f6ddff;
+    background: rgb(248, 246, 221);
 }
 
 #kvadrat {
