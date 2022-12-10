@@ -107,6 +107,7 @@ button{
 }
 
 input{
+    font-family: RoundsBlack;
     width: 95%;
     height: 150;
     border-radius: 25px;
@@ -117,6 +118,7 @@ input{
 }
 
 textarea{
+    font-family: RoundsBlack;
     width: 95%;
     height: 300px;
     border-radius: 25px;
@@ -171,20 +173,55 @@ textarea{
     color:#f8f6ddff;
 }
 
+#yellow{
+    color:#fce6b5ff;
+    border-radius: 25px;
+    border: 15px solid #fce6b5ff;
+}
+
 .map-responsive{
     overflow:hidden;
-    padding-bottom:56.25%;
-    position:relative;
-    height:0;
+    width:800px;
+    height:600px;
     border-radius: 25px;
     border: 15px solid #f8f6ddff;
+    margin-bottom: 15px;
 }
 .map-responsive iframe{
-    left:0;
-    top:0;
     height:100%;
     width:100%;
-    position:absolute;
+    object-fit: cover;
+}
+.active button{
+    font-family: RoundsBlack;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 25px;
+    background: #fce6b5ff;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    height: 100px;
+    font-size: 48px;
+    color: #7c5244ff;
+    width: 100%;
+}
+
+.kg_button button{
+    font-family: RoundsBlack;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 25px;
+    background: rgb(121, 114, 26);
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    height: 100px;
+    font-size: 48px;
+    color: #7c5244ff;
+    width: 100%;
 }
 
 select{
@@ -233,4 +270,5 @@ button::after{
     background: #fce6b5ff;
     color: #7c5244ff;
     text-align: center;
+    object-fit: cover;
 }
