@@ -1,9 +1,13 @@
-@font-face { 
-    font-family: "RoundsBlack";
-    src: url("../fonts/RoundsBlack/RoundsBlack.eot"),
-    url("../fonts/RoundsBlack/RoundsBlack.woff") format("woff"),
-    url("../fonts/RoundsBlack/RoundsBlack.ttf") format("truetype");
-    font-style: normal;
+
+
+@font-face {
+	font-family: 'RoundsBlack';
+	src: url('../fonts/roundsblack.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/roundsblack.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/roundsblack.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/roundsblack.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/roundsblack.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/roundsblack.svg#roundsblack') format('svg'); /* Chrome < 4, Legacy iOS */
 }
 
 div {
