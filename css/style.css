@@ -17,6 +17,12 @@
 		url('../fonts/roundsblack.svg#roundsblack') format('svg'); /* Chrome < 4, Legacy iOS */
 }
 
+@font-face {
+	font-family: 'RoundsNeue';
+	src: url('../fonts/TTRoundsNeue-Bold.ttf') format('truetype');
+}
+
+
 div {
     width: 1000px; /* ширина основного блока */
     margin: 0 auto; /* задаем отступ слева и справа auto чтобы сработало выравнивание по центру */
@@ -41,7 +47,7 @@ hr {
 }
 
 h2{
-    font-family: RoundsBlack;
+    font-family: RoundsNeue;
     margin: 5px;
 }
 
