@@ -51,6 +51,17 @@ h2{
     margin: 5px;
 }
 
+h1{
+    font-family: RoundsNeue;
+    margin: 5px;
+}
+
+a{
+    font-family: RoundsNeue;
+    color: #fce6b5ff;
+    font-size: 48px;
+}
+
 .header {
     text-align: center;
     margin-bottom: 25px;
@@ -95,8 +106,31 @@ button{
     transition: 0.2s;
 }
 
+select{
+    appearance: none;
+    overflow: hidden;
+    background-image: url('../padding_anchor.png') no-repeat right;
+    font-family: RoundsBlack;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 25px;
+    background: #fce6b5ff;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    height: 100px;
+    font-size: 48px;
+    color: #7c5244ff;
+    width: 100%;
+}
+
 button:hover{
-    background: rgb(248, 246, 221);
+    background: #f8f6ddff;
+}
+
+button::after{
+    background: #fce6b5ff;
 }
 
 #kvadrat {
