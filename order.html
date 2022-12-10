@@ -28,22 +28,82 @@
                         <button>1.5 кг / 1000 руб</button>
                         <button>2 кг / 1500 руб</button>
                     </div>
+                    <hr>
                     <div class="filling">
                         <h1>Начинка:</h1>
-                        <img src="filling.png" class="img_filling">
-                        <select name="select_filling" required="required">
-                            <option value="">Выбрать начинку</option>
+                        <div class="img_filling_div">
+                            <img src="../fairycakeskira.github.io/filling_images/filling.png" id="img_filling">
+                        </div>
+                        <select id="select_filling" required="required" onchange="getval(this);">
+                            <option value="0">Выбрать начинку</option>
                             <option value="1">Сникерс / xxx Руб</option>
-                            <option value="2">Сникерс / xxx Руб</option>
-                            <option value="3">Сникерс / xxx Руб</option>
-                            <option value="4">Сникерс / xxx Руб</option>
-                            <option value="5">Сникерс / xxx Руб</option>
-                            <option value="6">Сникерс / xxx Руб</option>
+                            <option value="2">Орео / xxx Руб</option>
+                            <option value="3">Шоколад / xxx Руб</option>
+                            <option value="4">Черника-ваниль / xxx Руб</option>
+                            <option value="5">Красный бархат / xxx Руб</option>
+                            <option value="6">Морковь-грецкий орех / xxx Руб</option>
+                            <option value="7">Пломбир / xxx Руб</option>
+                            <option value="8">Шоколад-малина орех / xxx Руб</option>
+                            <option value="9">Малина-фисташка / xxx Руб</option>
+                            <option value="10">Радуга / xxx Руб</option>
                           </select>
                     </div>
+                    <hr>
+                    <div class="delivery">
+                        <button onmousedown="viewDiv1()">Самовывоз</button>
+                        <div id="div1">
+                            <h1 id="white">Адрес: г. Домодедово, бла бла, д. блабла</h1>
+                            <div class="map-responsive">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2262.695305836066!2d37.744674339265494!3d55.450544593797545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414aa5cd7150d777%3A0xa8de3041240d2f94!2z0J7Qu9C40LzQv9C40LnRgdC60LjQuSDRgdC60LLQtdGA!5e0!3m2!1sru!2sru!4v1670695361952!5m2!1sru!2sru" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                        <button onmousedown="viewDiv2()">Доставка</button>
+                        <div id="div2">
+                            <h1 id="white">Доставка по г. Домодедово - 200 руб</h1>
+                            <br>
+                            <h1 id="white">Ваш адрес:</h1>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="wish">
+                        <h1>Ваши пожелания:</h1>
+                        <textarea type="text"></textarea>
+                    </div>
+                    <button>Заказать</button>
                 </div>
             </div>
             <div class="footer"> </div>
         </div>
+
+        <script>
+            var images_store = {
+                "0": '../fairycakeskira.github.io/filling_images/filling.png',
+                "1": '../fairycakeskira.github.io/filling_images/1.jpg',
+                "2": '../fairycakeskira.github.io/filling_images/2.jpg',
+                "3": '../fairycakeskira.github.io/filling_images/3.jpg',
+                "4": '../fairycakeskira.github.io/filling_images/4.jpg',
+                "5": '../fairycakeskira.github.io/filling_images/5.jpg',
+                "6": '../fairycakeskira.github.io/filling_images/6.jpg',
+                "7": '../fairycakeskira.github.io/filling_images/7.jpg',
+                "8": '../fairycakeskira.github.io/filling_images/8.jpg',
+                "9": '../fairycakeskira.github.io/filling_images/9.jpg',
+                "10": '../fairycakeskira.github.io/filling_images/10.jpg'
+                }
+            
+            function getval(sel){
+                document.getElementById("img_filling").src= images_store[sel.value];
+            }
+
+            function viewDiv1(){
+                document.getElementById("div1").style.display = "block";
+                document.getElementById("div2").style.display = "none";
+            };
+
+            function viewDiv2(){
+                document.getElementById("div2").style.display = "block";
+                document.getElementById("div1").style.display = "none";
+            };
+        </script>
+
     </body>
 </html>
