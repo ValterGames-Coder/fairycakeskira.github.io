@@ -24,7 +24,7 @@
 
 
 div {
-    width: 1000px; /* ширина основного блока */
+    width: 800px; /* ширина основного блока */
     margin: 0 auto; /* задаем отступ слева и справа auto чтобы сработало выравнивание по центру */
 }
 
@@ -102,8 +102,8 @@ button:hover{
 #kvadrat {
     float: left;
     margin: 10px;
-    width: 480px;
-    height: 480px;
+    width: 380px;
+    height: 380px;
     border-radius: 25px;
     background: #fce6b5ff;
     color: #7c5244ff;
