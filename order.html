@@ -121,7 +121,9 @@
                 "0.5kg": 600,
                 "1kg": 1200,
                 "1.5kg": 1800,
-                "2kg": 2200
+                "2kg": 2200,
+                "with_delivery": 200,
+                "with_out_delivery": 0
             }
 
             var fillings = {
@@ -145,37 +147,37 @@
                 "2kg": '2 килограмма'
             }
 
-            var summakg = 0;
-            var summafilling = 0;
-            var summadelivery = 0;
+            var count_kg = 0;
+            var count_filling = 0;
+            var count_delivery = 0;
 
-            function set(sel){
-                sel.setAttribute("value", "Заказать (" + (summakg + summafilling) + " Руб)");
+            function finish_count(){
+                document.getElementById("result").setAttribute("value", "Заказать (" + (count_kg + count_filling + count_delivery) + " Руб)");
             }
 
             function setkg(sel){
                 summakg = counts[sel.value];
-                document.getElementById("result").setAttribute("value", "Заказать (" + (summakg + summafilling + summadelivery) + " Руб)");
+                finish_count();
             }
 
             function getval(sel){
                 document.getElementById("img_filling").src= images_store[sel.value];
                 summafilling = counts[sel.value];
-                document.getElementById("result").setAttribute("value", "Заказать (" + (summakg + summafilling + summadelivery) + " Руб)");
+                finish_count();
             }
 
             function viewDiv1(){
                 document.getElementById("div1").style.display = "block";
                 document.getElementById("div2").style.display = "none";
-                summadelivery = 0;
-                document.getElementById("result").setAttribute("value", "Заказать (" + (summakg + summafilling + summadelivery) + " Руб)");
+                summadelivery = counts["with_out_delivery"];
+                finish_count();
             };
 
             function viewDiv2(){
                 document.getElementById("div2").style.display = "block";
                 document.getElementById("div1").style.display = "none";
-                summadelivery = 200;
-                document.getElementById("result").setAttribute("value", "Заказать (" + (summakg + summafilling + summadelivery) + " Руб)");
+                summadelivery = counts["with_delivery"];
+                finish_count();
             };
             
             const TOKEN = "5524978177:AAGrWbaA-rda1AVHuUWXRSePemO8loW4n0A";
