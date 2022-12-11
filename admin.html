@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>admin fairycakes</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" href="icon.ico">
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <div class="header">
+                <img src="fairycakesheader.png" height="350">
+            </div>
+            <div class="content">
+                <hr>
+                <div class="input-button">
+                    <button onmousedown='viewDiv("kgs")'>kgs</button>
+                    <div id="admin-kgs">
+                        <h1 id="white">Размер:</h1>
+                        <input type="text" id="white">
+                        <h1 id="white">Цена:</h1>
+                        <input type="text" id="white">
+                        <button onmousedown='viewDiv("kgs")' id="white-button">+ Добавить размер</button>
+                    </div>
+                    <button onmousedown='viewDiv("fillings")'>fillings</button>
+                    <div id="admin-fillings">
+                        <h1 id="white">Название:</h1>
+                        <input type="text" id="white">
+                        <h1 id="white">Цена:</h1>
+                        <input type="text" id="white">
+                        <button onmousedown='viewDiv("kgs")' id="white-button">+ Добавить начинку</button>
+                    </div>
+                    <button onmousedown='viewDiv("gallery")'>gallery</button>
+                    <div id="admin-gallery">
+                        <h1 id="white">Картинка:</h1>
+                        <input type="file" id="white">
+                        <button wonmousedown='viewDiv("kgs")' id="white-button">+ Добавить фото</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer"> </div>
+        </div>
+
+    <script>
+        function viewDiv(d) {
+            if (d == "kgs") {
+                document.getElementById("admin-kgs").style.display = "block"
+                document.getElementById("admin-fillings").style.display = "none"
+                document.getElementById("admin-gallery").style.display = "none"
+            }
+            if (d == "fillings") {
+                document.getElementById("admin-kgs").style.display = "none"
+                document.getElementById("admin-fillings").style.display = "block"
+                document.getElementById("admin-gallery").style.display = "none"
+            }
+            if (d == "gallery") {
+                document.getElementById("admin-kgs").style.display = "none"
+                document.getElementById("admin-fillings").style.display = "none"
+                document.getElementById("admin-gallery").style.display = "block"
+            }
+        }
+    </script>
+    </body>
+</html>

@@ -243,6 +243,21 @@ textarea{
     width: 100%;
 }
 
+#admin-kgs {
+    display: none;
+    width: 100%;
+}
+
+#admin-fillings {
+    display: none;
+    width: 100%;
+}
+
+#admin-gallery {
+    display: none;
+    width: 100%;
+}
+
 .img_filling_div{
     width: 770px;
     height: 770px;
@@ -260,6 +275,10 @@ textarea{
 
 #white{
     color:#f8f6ddff;
+}
+
+#white-button{
+    background-color:#f8f6ddff;
 }
 
 #yellow{
