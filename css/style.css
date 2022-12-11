@@ -74,6 +74,50 @@ a{
     box-sizing: border-box;
 }
 
+.kg input[type="radio"] {
+    display: none;
+}
+
+#result{
+    font-family: RoundsBlack;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 25px;
+    background: #fce6b5ff;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    height: 100px;
+    font-size: 48px;
+    color: #7c5244ff;
+    width: 100%;
+    transition: 0.2s;
+}
+
+.kg label {
+    width: 100%;
+    height: 75px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 25px;
+    background: #fce6b5ff;
+    font-family: RoundsBlack;
+    color: #7c5244ff;
+    font-size: 48px;
+    cursor: pointer;
+    padding-top: 25px;
+    margin-bottom: 15px;
+}
+
+.kg input[type="radio"]:checked+label {
+    background-color: #f8f6ddff;
+}
+
+.kg label:hover {
+    background-color: #f8f6ddff;
+}
+
 .link_buttons button{
     border: none;
     border-radius: 25px;
@@ -115,6 +159,50 @@ input{
     background-color: #7c5244ff;
     color: #f8f6ddff;
     font-size: 48px;
+}
+
+.input-button {
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.input-button input[type=radio] {
+	display: none;
+}
+
+.input-button input[type=radio]:checked + label {
+	background: #f8f6ddff;
+}
+
+.input-button label {
+    margin: 0px auto;
+	display: inline-block;
+	cursor: pointer;
+    width: 49%;
+    text-transform: uppercase;
+    text-align: center;
+    height: 100px;
+    font-size: 48px;
+	border-radius: 25px;
+	user-select: none;
+    background-color: #fce6b5ff;
+    color: #7c5244ff;
+    font-family: RoundsBlack;
+}
+
+.input-button label:hover {
+	background: #f8f6ddff;
+}
+
+/* Disabled */
+
+.input-button input[type=radio]:disabled + label {
+
+	background: #efefef;
+
+	color: #666;
+
 }
 
 textarea{
@@ -181,11 +269,13 @@ textarea{
 
 .map-responsive{
     overflow:hidden;
-    width:800px;
+    width:770px;
     height:600px;
     border-radius: 25px;
     border: 15px solid #f8f6ddff;
+    margin-top: 15px;
     margin-bottom: 15px;
+    display: block;
 }
 .map-responsive iframe{
     height:100%;
@@ -270,5 +360,4 @@ button::after{
     background: #fce6b5ff;
     color: #7c5244ff;
     text-align: center;
-    object-fit: cover;
 }

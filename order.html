@@ -23,60 +23,68 @@
                 <div class="order">
                     <div class="kg">
                         <h1>Вес/Размер:</h1>
-                        <button сlass="kg_button active">0.5 кг / 250 руб</button>
-                        <button сlass="kg_button">1 кг / 600 руб</button>
-                        <button сlass="kg_button">1.5 кг / 1000 руб</button>
-                        <button сlass="kg_button">2 кг / 1500 руб</button>
+                        <input type="radio" id="kg1" name="kg_button" value="0.5kg" checked onclick="setkg(this);">
+                        <label for="kg1" >0.5 кг / 250 руб</label>
+                        <input type="radio" id="kg2" name="kg_button" value="1kg" checked onclick="setkg(this);">
+                        <label for="kg2">1 кг / 600 руб</label>
+                        <input type="radio" id="kg3" name="kg_button" value="1.5kg" checked onclick="setkg(this);">
+                        <label for="kg3">1.5 кг / 1000 руб</label>
+                        <input type="radio" id="kg4" name="kg_button" value="2kg" checked onclick="setkg(this);">
+                        <label for="kg4">2 кг / 1500 руб</label>
                     </div>
                     <hr>
                     <div class="filling">
                         <h1>Начинка:</h1>
                         <div class="img_filling_div">
-                            <img src="../fairycakeskira.github.io/filling_images/filling.png" id="img_filling">
+                            <img src="https://github.com/fairycakeskira/fairycakeskira.github.io/blob/main/filling_images/filling.png?raw=true" id="img_filling">
                         </div>
                         <select id="select_filling" required="required" onchange="getval(this);">
-                            <option value="0">Выбрать начинку</option>
-                            <option value="1">Сникерс / xxx Руб</option>
-                            <option value="2">Орео / xxx Руб</option>
-                            <option value="3">Шоколад / xxx Руб</option>
-                            <option value="4">Черника-ваниль / xxx Руб</option>
-                            <option value="5">Красный бархат / xxx Руб</option>
-                            <option value="6">Морковь-грецкий орех / xxx Руб</option>
-                            <option value="7">Пломбир / xxx Руб</option>
-                            <option value="8">Шоколад-малина орех / xxx Руб</option>
-                            <option value="9">Малина-фисташка / xxx Руб</option>
-                            <option value="10">Радуга / xxx Руб</option>
+                            <option value="filling0">Выбрать начинку</option>
+                            <option value="filling1">Сникерс / xxx Руб</option>
+                            <option value="filling2">Орео / xxx Руб</option>
+                            <option value="filling3">Шоколад / xxx Руб</option>
+                            <option value="filling4">Черника-ваниль / xxx Руб</option>
+                            <option value="filling5">Красный бархат / xxx Руб</option>
+                            <option value="filling6">Морковь-грецкий орех / xxx Руб</option>
+                            <option value="filling7">Пломбир / xxx Руб</option>
+                            <option value="filling8">Шоколад-малина орех / xxx Руб</option>
+                            <option value="filling9">Малина-фисташка / xxx Руб</option>
+                            <option value="filling10">Радуга / xxx Руб</option>
                           </select>
                     </div>
                     <hr>
+                    <form name="order_form">
                     <div class="delivery">
-                        <button onmousedown="viewDiv1()">Самовывоз</button>
-                        <div id="div1">
-                            <h1 id="white">Адрес: г. Домодедово, бла бла, д. блабла</h1>
-                            <div class="map-responsive">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2262.695305836066!2d37.744674339265494!3d55.450544593797545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414aa5cd7150d777%3A0xa8de3041240d2f94!2z0J7Qu9C40LzQv9C40LnRgdC60LjQuSDRgdC60LLQtdGA!5e0!3m2!1sru!2sru!4v1670695361952!5m2!1sru!2sru" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
+                        <div class="input-button">
+                            <button onmousedown="viewDiv1()">Самовывоз</button>
+                            <button onmousedown="viewDiv2()">Доставка</button>
                         </div>
-                        <button onmousedown="viewDiv2()">Доставка</button>
-                        <div id="div2">
-                            <h1 id="white">Доставка по г. Домодедово - 200 руб</h1>
-                            <br>
-                            <h1 id="white">Ваш адрес:</h1>
-                            <input type="text">
+                    </div>
+                    <div id="div2">
+                        <h1 id="white">Доставка по г. Домодедово - 200 руб</h1>
+                        <br>
+                        <h1 id="white">Ваш адрес:</h1>
+                        <input type="text" required>
+                    </div>
+                    <div id="div1">
+                        <!-- <h1 id="white">Адрес: г. Домодедово, бла бла, д. блабла</h1> -->
+                        <div class="map-responsive">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2262.695305836066!2d37.744674339265494!3d55.450544593797545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414aa5cd7150d777%3A0xa8de3041240d2f94!2z0J7Qu9C40LzQv9C40LnRgdC60LjQuSDRgdC60LLQtdGA!5e0!3m2!1sru!2sru!4v1670695361952!5m2!1sru!2sru" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                     <hr>
                     <div class="contacts">
                         <h1>Ваше имя:</h1>
-                        <input type="text" id="yellow">
+                        <input type="text" id="yellow" placeholder="Имя" required>
                         <h1>Ваш телефон:</h1>
-                        <input type="text" id="yellow">
+                        <input type="text" id="yellow" placeholder="Телефон" required>
                     </div>
                     <div class="wish">
                         <h1>Ваши пожелания:</h1>
                         <textarea type="text"></textarea>
                     </div>
-                    <button>Заказать</button>
+                    <input type="submit" id="result" value="Заказать (0 Руб)" onclick="set(this);">
+                    </form>
                 </div>
             </div>
             <div class="footer"> </div>
@@ -84,26 +92,53 @@
 
         <script>
             var images_store = {
-                "0": '../fairycakeskira.github.io/filling_images/filling.png',
-                "1": '../fairycakeskira.github.io/filling_images/1.jpg',
-                "2": '../fairycakeskira.github.io/filling_images/2.jpg',
-                "3": '../fairycakeskira.github.io/filling_images/3.jpg',
-                "4": '../fairycakeskira.github.io/filling_images/4.jpg',
-                "5": '../fairycakeskira.github.io/filling_images/5.jpg',
-                "6": '../fairycakeskira.github.io/filling_images/6.jpg',
-                "7": '../fairycakeskira.github.io/filling_images/7.jpg',
-                "8": '../fairycakeskira.github.io/filling_images/8.jpg',
-                "9": '../fairycakeskira.github.io/filling_images/9.jpg',
-                "10": '../fairycakeskira.github.io/filling_images/10.jpg'
-                }
+                "filling0": 'https://github.com/fairycakeskira/fairycakeskira.github.io/blob/main/filling_images/filling.png?raw=true',
+                "filling1": 'https://github.com/fairycakeskira/fairycakeskira.github.io/blob/main/filling_images/1.jpg?raw=true',
+                "filling2": 'https://github.com/fairycakeskira/fairycakeskira.github.io/blob/main/filling_images/2.jpg?raw=true',
+                "filling3": 'https://github.com/fairycakeskira/fairycakeskira.github.io/blob/main/filling_images/3.jpg?raw=true',
+                "filling4": 'https://github.com/fairycakeskira/fairycakeskira.github.io/blob/main/filling_images/4.jpg?raw=true',
+                "filling5": 'https://github.com/fairycakeskira/fairycakeskira.github.io/blob/main/filling_images/5.jpg?raw=true',
+                "filling6": 'https://github.com/fairycakeskira/fairycakeskira.github.io/blob/main/filling_images/6.jpg?raw=true',
+                "filling7": 'https://github.com/fairycakeskira/fairycakeskira.github.io/blob/main/filling_images/7.jpg?raw=true',
+                "filling8": 'https://github.com/fairycakeskira/fairycakeskira.github.io/blob/main/filling_images/8.jpg?raw=true',
+                "filling9": 'https://github.com/fairycakeskira/fairycakeskira.github.io/blob/main/filling_images/9.jpg?raw=true',
+                "filling10": 'https://github.com/fairycakeskira/fairycakeskira.github.io/blob/main/filling_images/10.jpg?raw=true'
+            }
 
-            $(document).on('click', '.kg_button', function() {  
-                $('.kg_button').removeClass("active");
-                    $(this).addClass("active");
-            });
-            
+            var counts = {
+                "filling0": 0,
+                "filling1": 100,
+                "filling2": 200,
+                "filling3": 300,
+                "filling5": 400,
+                "filling6": 500,
+                "filling7": 600,
+                "filling8": 700,
+                "filling9": 800,
+                "filling10": 1000,
+                "0.5kg": 250,
+                "1kg": 600,
+                "1.5kg": 1000,
+                "2kg": 1500
+            }
+
+            var summakg = 0;
+            var summafilling = 0;
+
+            function set(sel){
+                alert(sel);
+                sel.setAttribute("value", "Заказать (" + (summakg + summafilling) + " Руб)");
+            }
+
+            function setkg(sel){
+                summakg = counts[sel.value];
+                document.getElementById("result").setAttribute("value", "Заказать (" + (summakg + summafilling) + " Руб)");
+            }
+
             function getval(sel){
                 document.getElementById("img_filling").src= images_store[sel.value];
+                summafilling = counts[sel.value];
+                document.getElementById("result").setAttribute("value", "Заказать (" + (summakg + summafilling) + " Руб)");
             }
 
             function viewDiv1(){
@@ -116,6 +151,5 @@
                 document.getElementById("div1").style.display = "none";
             };
         </script>
-
     </body>
 </html>
