@@ -21,6 +21,7 @@
                 </div>
                 <hr>
                 <div class="order">
+                    <form name="order_form" id="order_form">
                     <div class="kg">
                         <h1>Вес/Размер:</h1>
                         <input type="radio" id="kg1" name="kg_button" value="0.5kg" checked onclick="setkg(this);">
@@ -38,7 +39,7 @@
                         <div class="img_filling_div">
                             <img src="https://github.com/fairycakeskira/fairycakeskira.github.io/blob/main/filling_images/filling.png?raw=true" id="img_filling">
                         </div>
-                        <select id="select_filling" required="required" onchange="getval(this);">
+                        <select id="select_filling" required="required" onchange="getval(this);" name="select_filling">
                             <option value="filling0">Выбрать начинку</option>
                             <option value="filling1">Сникерс / xxx Руб</option>
                             <option value="filling2">Орео / xxx Руб</option>
@@ -47,13 +48,12 @@
                             <option value="filling5">Красный бархат / xxx Руб</option>
                             <option value="filling6">Морковь-грецкий орех / xxx Руб</option>
                             <option value="filling7">Пломбир / xxx Руб</option>
-                            <option value="filling8">Шоколад-малина орех / xxx Руб</option>
+                            <option value="filling8">Шоколад-малина-орех / xxx Руб</option>
                             <option value="filling9">Малина-фисташка / xxx Руб</option>
                             <option value="filling10">Радуга / xxx Руб</option>
                           </select>
                     </div>
                     <hr>
-                    <form name="order_form">
                     <div class="delivery">
                         <div class="input-button">
                             <button onmousedown="viewDiv1()">Самовывоз</button>
@@ -64,7 +64,7 @@
                         <h1 id="white">Доставка по г. Домодедово - 200 руб</h1>
                         <br>
                         <h1 id="white">Ваш адрес:</h1>
-                        <input type="text" required>
+                        <input type="text" name="address">
                     </div>
                     <div id="div1">
                         <!-- <h1 id="white">Адрес: г. Домодедово, бла бла, д. блабла</h1> -->
@@ -75,21 +75,22 @@
                     <hr>
                     <div class="contacts">
                         <h1>Ваше имя:</h1>
-                        <input type="text" id="yellow" required>
+                        <input type="text" id="yellow" required name="user_name">
                         <h1>Ваш телефон:</h1>
-                        <input type="text" id="yellow"  required>
+                        <input type="tel" id="yellow" required name="user_phone">
                     </div>
                     <div class="wish">
                         <h1>Ваши пожелания:</h1>
-                        <textarea type="text"></textarea>
+                        <textarea type="text" name="user_wish"></textarea>
                     </div>
-                    <input type="submit" id="result" value="Заказать (0 Руб)" onclick="set(this);">
+                    <input type="submit" id="result" value="Заказать (0 Руб)" onclick="set(this);" name="result">
                     </form>
                 </div>
             </div>
             <div class="footer"> </div>
         </div>
 
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
         <script>
             var images_store = {
                 "filling0": 'https://github.com/fairycakeskira/fairycakeskira.github.io/blob/main/filling_images/filling.png?raw=true',
@@ -110,6 +111,7 @@
                 "filling1": 100,
                 "filling2": 200,
                 "filling3": 300,
+                "filling4": 300,
                 "filling5": 400,
                 "filling6": 500,
                 "filling7": 600,
@@ -122,12 +124,32 @@
                 "2kg": 1500
             }
 
+            var fillings = {
+                "filling0": 'Нет начинки',
+                "filling1": 'Сникерс',
+                "filling2": 'Орео',
+                "filling3": 'Шоколад',
+                "filling4": 'Черника-ваниль',
+                "filling5": 'Красный бархат',
+                "filling6": 'Морковь-грецкий орех',
+                "filling7": 'Пломбир',
+                "filling8": 'Шоколад-малина-орех',
+                "filling9": 'Малина-фисташка',
+                "filling10": 'Радуга'
+            }
+
+            var kgs = {
+                "0.5kg": '500 грамм',
+                "1kg": '1 килограмм',
+                "1.5kg": '1.5 килограмма',
+                "2kg": '2 килограмма'
+            }
+
             var summakg = 0;
             var summafilling = 0;
             var summadelivery = 0;
 
             function set(sel){
-                alert(sel);
                 sel.setAttribute("value", "Заказать (" + (summakg + summafilling) + " Руб)");
             }
 
@@ -155,6 +177,37 @@
                 summadelivery = 200;
                 document.getElementById("result").setAttribute("value", "Заказать (" + (summakg + summafilling + summadelivery) + " Руб)");
             };
+            const TOKEN = "5524978177:AAGrWbaA-rda1AVHuUWXRSePemO8loW4n0A";
+            const CHAT_ID = "-1001440617513";
+            const URI_API = `https://api.telegram.org/bot${ TOKEN }/sendMessage`;
+
+            document.getElementById('order_form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let message = `<b>Новый заказ!</b>\n`;
+                message += `👤 Имя: ${this.user_name.value}\n`;
+                message += `📞 Телефон: <a href="tel:${this.user_phone.value}">${this.user_phone.value}</a>\n`;
+                var address = this.address;
+                if(address.value != ''){
+                    message += `🗺 Адрес: ${address.value}\n`
+                }
+                message += `🎂 <b>Торт:</b>\n    - Размер: ${kgs[this.kg_button.value]}\n`;
+                message += `    - Начинка: ${fillings[this.select_filling.value]}\n`
+                message += `📝 Пожелания заказчика: ${this.user_wish.value}\n`;
+                message += `💰 <b>Цена: </b>${(summakg + summafilling + summadelivery)} руб.`
+                
+                axios.post(URI_API, {
+                    chat_id: CHAT_ID,
+                    parse_mode: 'html',
+                    text: message
+                })
+                .then((res) => {
+                    location.href = "../fairycakeskira.github.io/thanks.html"
+                })
+                .catch((err) => {
+                    location.href = "../fairycakeskira.github.io/error.html"
+                });
+            });
         </script>
     </body>
 </html>
