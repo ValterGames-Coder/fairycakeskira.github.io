@@ -75,9 +75,9 @@
                     <hr>
                     <div class="contacts">
                         <h1>Ваше имя:</h1>
-                        <input type="text" id="yellow" placeholder="Имя" required>
+                        <input type="text" id="yellow" required>
                         <h1>Ваш телефон:</h1>
-                        <input type="text" id="yellow" placeholder="Телефон" required>
+                        <input type="text" id="yellow"  required>
                     </div>
                     <div class="wish">
                         <h1>Ваши пожелания:</h1>
@@ -124,6 +124,7 @@
 
             var summakg = 0;
             var summafilling = 0;
+            var summadelivery = 0;
 
             function set(sel){
                 alert(sel);
@@ -132,23 +133,27 @@
 
             function setkg(sel){
                 summakg = counts[sel.value];
-                document.getElementById("result").setAttribute("value", "Заказать (" + (summakg + summafilling) + " Руб)");
+                document.getElementById("result").setAttribute("value", "Заказать (" + (summakg + summafilling + summadelivery) + " Руб)");
             }
 
             function getval(sel){
                 document.getElementById("img_filling").src= images_store[sel.value];
                 summafilling = counts[sel.value];
-                document.getElementById("result").setAttribute("value", "Заказать (" + (summakg + summafilling) + " Руб)");
+                document.getElementById("result").setAttribute("value", "Заказать (" + (summakg + summafilling + summadelivery) + " Руб)");
             }
 
             function viewDiv1(){
                 document.getElementById("div1").style.display = "block";
                 document.getElementById("div2").style.display = "none";
+                summadelivery = 0;
+                document.getElementById("result").setAttribute("value", "Заказать (" + (summakg + summafilling + summadelivery) + " Руб)");
             };
 
             function viewDiv2(){
                 document.getElementById("div2").style.display = "block";
                 document.getElementById("div1").style.display = "none";
+                summadelivery = 200;
+                document.getElementById("result").setAttribute("value", "Заказать (" + (summakg + summafilling + summadelivery) + " Руб)");
             };
         </script>
     </body>
