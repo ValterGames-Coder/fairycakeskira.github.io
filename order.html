@@ -83,7 +83,7 @@
                         <h1>Ваши пожелания:</h1>
                         <textarea type="text" name="user_wish"></textarea>
                     </div>
-                    <input type="submit" id="result" value="Заказать (0 Руб)" onclick="set(this);" name="result">
+                    <input type="submit" id="result" value="Заказать (0 Руб)" name="result">
                     </form>
                 </div>
             </div>
@@ -177,6 +177,7 @@
                 summadelivery = 200;
                 document.getElementById("result").setAttribute("value", "Заказать (" + (summakg + summafilling + summadelivery) + " Руб)");
             };
+            
             const TOKEN = "5524978177:AAGrWbaA-rda1AVHuUWXRSePemO8loW4n0A";
             const CHAT_ID = "-1001440617513";
             const URI_API = `https://api.telegram.org/bot${ TOKEN }/sendMessage`;
