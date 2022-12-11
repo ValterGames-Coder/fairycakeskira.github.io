@@ -25,13 +25,13 @@
                     <div class="kg">
                         <h1>Вес/Размер:</h1>
                         <input type="radio" id="kg1" name="kg_button" value="0.5kg" checked onclick="setkg(this);">
-                        <label for="kg1" >0.5 кг / 250 руб</label>
+                        <label for="kg1" >0.5 кг / 600 руб</label>
                         <input type="radio" id="kg2" name="kg_button" value="1kg" checked onclick="setkg(this);">
-                        <label for="kg2">1 кг / 600 руб</label>
+                        <label for="kg2">1 кг / 1200 руб</label>
                         <input type="radio" id="kg3" name="kg_button" value="1.5kg" checked onclick="setkg(this);">
-                        <label for="kg3">1.5 кг / 1000 руб</label>
+                        <label for="kg3">1.5 кг / 1800 руб</label>
                         <input type="radio" id="kg4" name="kg_button" value="2kg" checked onclick="setkg(this);">
-                        <label for="kg4">2 кг / 1500 руб</label>
+                        <label for="kg4">2 кг / 2200 руб</label>
                     </div>
                     <hr>
                     <div class="filling">
@@ -41,16 +41,16 @@
                         </div>
                         <select id="select_filling" required="required" onchange="getval(this);" name="select_filling">
                             <option value="filling0">Выбрать начинку</option>
-                            <option value="filling1">Сникерс / xxx Руб</option>
-                            <option value="filling2">Орео / xxx Руб</option>
-                            <option value="filling3">Шоколад / xxx Руб</option>
-                            <option value="filling4">Черника-ваниль / xxx Руб</option>
-                            <option value="filling5">Красный бархат / xxx Руб</option>
-                            <option value="filling6">Морковь-грецкий орех / xxx Руб</option>
-                            <option value="filling7">Пломбир / xxx Руб</option>
-                            <option value="filling8">Шоколад-малина-орех / xxx Руб</option>
-                            <option value="filling9">Малина-фисташка / xxx Руб</option>
-                            <option value="filling10">Радуга / xxx Руб</option>
+                            <option value="filling1">Сникерс / 400 Руб</option>
+                            <option value="filling2">Орео / 200 Руб</option>
+                            <option value="filling3">Шоколад / бесплатно</option>
+                            <option value="filling4">Черника-ваниль / 200 Руб</option>
+                            <option value="filling5">Красный бархат / 200 Руб</option>
+                            <option value="filling6">Морковь-грецкий орех / 200 Руб</option>
+                            <option value="filling7">Пломбир / бесплатно</option>
+                            <option value="filling8">Шоколад-малина-орех / 200 Руб</option>
+                            <option value="filling9">Малина-фисташка / 400 Руб</option>
+                            <option value="filling10">Радуга / 400 Руб</option>
                           </select>
                     </div>
                     <hr>
@@ -108,20 +108,20 @@
 
             var counts = {
                 "filling0": 0,
-                "filling1": 100,
+                "filling1": 400,
                 "filling2": 200,
-                "filling3": 300,
-                "filling4": 300,
-                "filling5": 400,
-                "filling6": 500,
-                "filling7": 600,
-                "filling8": 700,
-                "filling9": 800,
-                "filling10": 1000,
-                "0.5kg": 250,
-                "1kg": 600,
-                "1.5kg": 1000,
-                "2kg": 1500
+                "filling3": 0,
+                "filling4": 200,
+                "filling5": 200,
+                "filling6": 200,
+                "filling7": 0,
+                "filling8": 200,
+                "filling9": 400,
+                "filling10": 400,
+                "0.5kg": 600,
+                "1kg": 1200,
+                "1.5kg": 1800,
+                "2kg": 2200
             }
 
             var fillings = {
@@ -202,10 +202,10 @@
                     text: message
                 })
                 .then((res) => {
-                    location.href = "/thanks.html"
+                    location.href = "https://github.com/fairycakeskira/fairycakeskira.github.io/blob/main/thanks.html"
                 })
                 .catch((err) => {
-                    location.href = "/error.html"
+                    location.href = "https://github.com/fairycakeskira/fairycakeskira.github.io/blob/main/error.html"
                 });
             });
         </script>
