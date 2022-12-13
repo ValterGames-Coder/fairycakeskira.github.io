@@ -197,7 +197,7 @@
                 message += `🎂 <b>Торт:</b>\n    - Размер: ${kgs[this.kg_button.value]}\n`;
                 message += `    - Начинка: ${fillings[this.select_filling.value]}\n`
                 message += `📝 Пожелания заказчика: ${this.user_wish.value}\n`;
-                message += `💰 <b>Цена: </b>${(summakg + summafilling + summadelivery)} руб.`
+                message += `💰 <b>Цена: </b>${(count_kg + count_filling + count_delivery)} руб.`
                 
                 axios.post(URI_API, {
                     chat_id: CHAT_ID,
