@@ -64,7 +64,7 @@
                         <h1 id="white">Доставка по г. Домодедово - 200 руб</h1>
                         <br>
                         <h1 id="white">Ваш адрес:</h1>
-                        <input type="text" name="address">
+                        <input type="text" name="address" id='address'>
                     </div>
                     <div id="div1">
                         <!-- <h1 id="white">Адрес: г. Домодедово, бла бла, д. блабла</h1> -->
@@ -118,10 +118,10 @@
                 "filling8": 200,
                 "filling9": 400,
                 "filling10": 400,
-                "0.5kg": 600,
-                "1kg": 1200,
-                "1.5kg": 1800,
-                "2kg": 2200,
+                "0.5kg": 700,
+                "1kg": 1800,
+                "1.5kg": 2600,
+                "2kg": 3300,
                 "with_delivery": 200,
                 "with_out_delivery": 0
             }
@@ -183,6 +183,8 @@
             const TOKEN = "5524978177:AAGrWbaA-rda1AVHuUWXRSePemO8loW4n0A";
             const CHAT_ID = "-1001440617513";
             const URI_API = `https://api.telegram.org/bot${ TOKEN }/sendMessage`;
+            
+            var address = document.getElementById("address").value;
 
             document.getElementById('order_form').addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -197,7 +199,8 @@
                 message += `🎂 <b>Торт:</b>\n    - Размер: ${kgs[this.kg_button.value]}\n`;
                 message += `    - Начинка: ${fillings[this.select_filling.value]}\n`
                 message += `📝 Пожелания заказчика: ${this.user_wish.value}\n`;
-                message += `💰 <b>Цена: </b>${(count_kg + count_filling + count_delivery)} руб.`
+                message += `💰 <b>Цена: </b>${(count_kg + count_filling + count_delivery)} руб.\n`
+                message += `🥾 <b>Место: </b>${address}`
                 
                 axios.post(URI_API, {
                     chat_id: CHAT_ID,
